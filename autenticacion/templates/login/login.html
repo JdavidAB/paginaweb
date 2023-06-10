@@ -1,0 +1,57 @@
+{% extends "paginawebApp/base.html" %}
+
+{% load static %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+<!-- <div><p></p></div> -->
+
+<form method ="post" action="" style="color: black;">
+
+    {% csrf_token %}
+
+    <div style="width: 75%; margin: auto;">
+
+        <br>
+
+            {% if messages %}
+
+            {% for mensaje in messages %}
+
+            <span class="alert alert-{{mensaje.tags}}">{{mensaje}}</span>
+
+            {% endfor %}
+
+            {% endif %}
+
+        <br/>
+
+    {{form}}
+
+    <!-- {{crispy}} -->
+
+    <button type="submit" class="btn-success">Login</button>
+
+    <br>
+    
+    <br/>
+
+</div>
+
+</form>
+
+{% endblock %}
+
+
+<!-- <html>
+
+<body>
+
+    Contactos
+
+</body>
+
+</html> -->
+
