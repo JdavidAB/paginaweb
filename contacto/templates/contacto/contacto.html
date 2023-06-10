@@ -1,0 +1,80 @@
+{% extends "paginawebApp/base.html" %}
+
+{% load static %}
+
+{% block content %}
+<h2></h2>
+<div class="intro-text left-0 text-center bg-faded p-4 rounded">
+    <h2 class="section-heading mb-1" >
+      <span class="section-heading-lower letracontacto">¡COMUNICATE CON</span>
+      <span class="section-heading-lower letracontacto">NOSOTROS!</span>
+    </h2>
+</div>
+
+<div class="contenedorFormulario">
+
+    {% if "valido" in request.GET %}
+
+    <p style="color: black";>Información enviada correctamente, gracias</p>
+
+    {% endif %}
+
+    <form action="" method="POST" style="text-align: center;">
+        {% csrf_token %}
+
+
+
+        <section class="page-section clearfix">
+            <div class="container">
+                <div class="intro">
+                    
+                    
+                    <div class="intro-text left-0 text-center bg-faded p-5 rounded">
+                    
+                        <table style="color: white; margin: 5px auto;">{{miFormulario.as_table}}</table>
+                        <input type="submit" value="Enviar" style="width: 150px;">
+                    
+                    </div>
+
+                    <div>
+                        <br>
+                            <img class="imgcontacto img-fluid mb-3 mb-lg-0 rounded" src="{% static 'paginawebApp/img/contacto.jpg' %}" alt="">
+                        </br>
+                    </div>
+
+                    
+                </div>
+            </div>
+        </section>
+
+
+
+        <!--  <img class="img-fluid" src="{% static 'paginawebApp/img/logox.png' %}" aling="center" alt="" width="100" height="100"> 
+        <table style="color: white; margin: 5px auto;">{{miFormulario.as_table}}</table>
+        <input type="submit" value="Enviar" style="width: 150px;">  -->
+    </form>
+
+</div>
+
+<div class="intro-text left-0 text-center bg-faded p-4 rounded">
+    <h2 class="section-heading mb-1" >
+      <span class="letracontacto"> Dirección &nbsp; Telefono &nbsp; Correo</span>
+    </h2>
+</div>
+
+<h2></h2>
+
+
+{% endblock %}
+
+<!-- <div><p>
+<html>
+
+<body>
+
+    Contactos  </input>  <div><p></p></div>   {{request.POST}}
+
+</body>
+
+</html>
+</p></div> -->
