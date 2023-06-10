@@ -1,0 +1,82 @@
+{% extends "paginawebApp/base.html" %}
+
+{% load static %}
+
+{% block content %}
+
+<div class="container">
+
+    <div style="float:right;">
+    
+      <!-- <p style="color: white;">Total: {{importe_total_carro}} COP</p> -->
+      {% if request.user.is_authenticated %}
+
+        {% include "carro/widget.html" %}
+
+      {% else %}
+
+      <div class="alert alert-danger text-center">Login para ver carro</div>
+
+      {% endif %} 
+
+    </div>
+
+    <div class="row">
+
+    <html>
+
+    <body>
+
+        {% for producto in productos %}
+
+            <div class="col-md-3">
+
+            <div class="card" style="width: 100%; margin: 5px 5px;">
+
+                <img src="{{producto.imagen.url}}" class="card-img-top">
+
+                <div class="card-body" style="text-align: center;">
+
+                    <h7 class="card-title">{{producto.nombre}}</h7>
+                    <p class="card-text">{{producto.precio}}&nbsp;COP</p>
+
+                </div>
+
+                <div class="card-footer text-center">
+
+                    <a href="{% url 'carro:agregar' producto.id %}" class="btn btn-success">Agregar al carro</a>
+
+                </div>
+
+            </div>
+
+            </div>
+
+        {% endfor %}
+
+    </body>
+
+    </html>
+
+    </div>
+
+</div>
+
+
+
+{% endblock %}
+
+
+<!-- <section class="page-section clearfix">
+        <div class="container">
+          <div class="intro">
+            <img class="intro-img img-fluid mb-3 mb-lg-0 rounded" src="{{producto.imagen.url}}" alt="" style="width: 50%;">
+            <div class="intro-text left-0 text-center bg-faded p-5 rounded">
+              <h2 class="section-heading mb-4" >
+                <span class="section-heading-lower">{{producto.nombre}}</span>
+                <span class="section-heading-upper">{{producto.precio}}</span>
+              </h2>
+            </div>
+          </div>
+        </div>
+      </section>  -->
