@@ -1,0 +1,66 @@
+{% extends "paginawebApp/base.html" %}
+
+{% load static %}
+
+{% block content %}
+
+    <!-- Heading -->
+    <seccion>
+      <img src="{% static 'paginawebApp/img/Otrofondo.png' %}" class="heaven"/> 
+      <section class="page-section clearfix">
+
+        <div class="container">
+          <div class="intro">
+            <img class="intro-imghome img-fluid mb-3 mb-lg-0 rounded" src="{% static 'paginawebApp/img/inicio1.png' %}" alt=""> 
+            <div class="intro-texthome left-0 text-center bg-faded p-5 rounded">
+              <h2 class="section-heading mb-4" >
+                <span class="section-heading-upper">Palabra del servicio que se presta</span>
+                <span class="section-heading-lower">El mejor servicio</span>
+              </h2>
+              <p class="mb-3 colorletrah">Objetivo de la empresa.</p>
+            
+            </div>
+          </div>
+        </div>
+      </section>
+    </seccion>
+
+    <!-- Message2 -->
+    <section class="page-section cta">
+      <div class="container">
+        <div class="intro">
+          
+          <img class="intro-imghome22 img-fluid mb-3 mb-lg-0 rounded" src="{% static 'paginawebApp/img/DesarrolloWeb.png' %}" alt="">
+          <div class="row">
+            <div class="col-xl-9 mx-auto">
+              <div class="cta-inner text-center rounded">
+                <h2 class="section-heading mb-4">
+                  <span class="section-heading-upper">WEB</span>
+                  <span class="section-heading-lower">PLANTILLA</span>
+                </h2>
+                <p class="mb-0 colorletrah">Descripción del servicio.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Message3 -->
+    <section class="page-section ctah3">
+      <div class="container">
+        <div class="row">
+          <div class="col-xl-9 mx-auto">
+            <div class="cta-inner text-center rounded">
+              <h2 class="section-heading mb-4">
+                <span class="section-heading-upper">Compromiso total</span>
+                <span class="section-heading-lower">Garantizado</span>
+              </h2>
+              <p class="mb-0">Descripción de la pagina.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    {% endblock %}
